@@ -1,0 +1,13 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4>Animation 动画功能</h4>
+  </div>
+
+  <div class="panel-body">
+    <button class="btn btn-primary" (click)="toggle()">click</button>
+    <div [@openClose]="isOpen? 'open': 'closed'" class="open-close-container">
+      这是动画
+    </div>
+  </div>
+
+</div>

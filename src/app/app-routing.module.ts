@@ -3,13 +3,15 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {HomeComponent} from './pages/home/home.component';
 import {CommunicationComponent} from './pages/communication/communication.component';
+import {AnimationComponent} from './pages/animation/animation.component';
 import {DirectiveComponent} from './pages/directive/directive.component';
 import {FormComponent} from './pages/form/form.component';
 import {LifeCycleComponent} from './pages/life-cycle/life-cycle.component';
-import { ShadowDomComponent } from './pages/shadow-dom/shadow-dom.component';
+import {ShadowDomComponent} from './pages/shadow-dom/shadow-dom.component';
 import {HttpComponent} from './pages/http/http.component';
 import {NgContentComponent} from './pages/ng-content/ng-content.component';
 import {RouterComponent} from './pages/router/router.component';
+import {ModuleComponent} from './pages/module/module.component';
 import {RxjsComponent} from './pages/rxjs/rxjs.component';
 import {I18nComponent} from './pages/i18n/i18n.component';
 
@@ -23,6 +25,11 @@ const routes: Routes = [
   {
     path: 'communication',
     component: CommunicationComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'animation',
+    component: AnimationComponent,
     pathMatch: 'full'
   },
   {
@@ -58,6 +65,11 @@ const routes: Routes = [
   {
     path: 'router',
     component: RouterComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'module',
+    component: ModuleComponent,
     pathMatch: 'full'
   },
   {

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +27,8 @@ import { NoneModeComponent } from './pages/shadow-dom/none-mode/none-mode.compon
 import { NgContent1Component } from './pages/ng-content/ng-content1/ng-content1.component';
 import { NgContent2Component } from './pages/ng-content/ng-content2/ng-content2.component';
 import { NgContent3Component } from './pages/ng-content/ng-content3/ng-content3.component';
+import { AnimationComponent } from './pages/animation/animation.component';
+import { ModuleComponent } from './pages/module/module.component';
 
 import { FontColorDirective } from './directives/font-color.directive';
 
@@ -52,13 +55,16 @@ import { FontColorDirective } from './directives/font-color.directive';
     NgContent1Component,
     NgContent2Component,
     NgContent3Component,
-    FontColorDirective
+    FontColorDirective,
+    AnimationComponent,
+    ModuleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
