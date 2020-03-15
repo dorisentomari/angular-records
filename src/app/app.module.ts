@@ -63,7 +63,7 @@ import { FontColorDirective } from './directives/font-color.directive';
     SsrComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
