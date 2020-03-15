@@ -29,8 +29,10 @@ import { NgContent2Component } from './pages/ng-content/ng-content2/ng-content2.
 import { NgContent3Component } from './pages/ng-content/ng-content3/ng-content3.component';
 import { AnimationComponent } from './pages/animation/animation.component';
 import { ModuleComponent } from './pages/module/module.component';
+import { SsrComponent } from './pages/ssr/ssr.component';
 
 import { FontColorDirective } from './directives/font-color.directive';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { FontColorDirective } from './directives/font-color.directive';
     NgContent3Component,
     FontColorDirective,
     AnimationComponent,
-    ModuleComponent
+    ModuleComponent,
+    SsrComponent
   ],
   imports: [
     BrowserModule,

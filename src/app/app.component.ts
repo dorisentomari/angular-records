@@ -43,6 +43,7 @@ export class AppComponent {
       {name: 'rxjs', routerLink: '/rxjs', ...common},
       {name: 'i18n', routerLink: '/i18n', ...common},
       {name: 'router', routerLink: '/router', ...common},
+      {name: 'ssr', routerLink: '/ssr', ...common},
     ];
   }
 
