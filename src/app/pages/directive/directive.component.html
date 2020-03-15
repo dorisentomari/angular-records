@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">指令的使用</div>
+
+  <div class="panel-body">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4 [ngClass]="ngClass">NgClass 的用法</h4>
+        <button class="btn btn-primary" (click)="updateNgClassBlue()">修改为蓝色</button>
+        <button class="btn btn-primary" (click)="updateNgClassRed()">修改为红色</button>
+      </li>
+
+      <li class="list-group-item">
+        <h4 [ngStyle]="ngStyle">NgStyle 的用法</h4>
+        <button class="btn btn-primary" (click)="updateNgStyleBlue()">修改为蓝色</button>
+        <button class="btn btn-primary" (click)="updateNgStyleRed()">修改为红色</button>
+      </li>
+
+      <li class="list-group-item">
+        <h4 *ngIf="ngIf">NgIf 的用法</h4>
+        <button class="btn btn-primary" (click)="updateNgIf()">显示/隐藏</button>
+      </li>
+
+      <li class="list-group-item">
+        <h4>NgFor 的用法</h4>
+        <div *ngFor="let item of userList; let key = index;">
+          <span>{{ item.name }}</span>
+          <button class="btn btn-primary" (click)="getNgForItem(item)">获取 item 的值</button>
+        </div>
+
+      </li>
+
+    </ul>
+  </div>
+
+</div>

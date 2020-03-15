@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {CommunicationService} from '../../services/communication.service';
 
 @Component({
   selector: 'app-communication',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommunicationComponent implements OnInit {
 
-  constructor() { }
+  public name: string;
+
+  constructor(
+    public communicationService: CommunicationService
+  ) {
+    this.name = 'PARENT JACK';
+  }
 
   ngOnInit(): void {
+  }
+
+  public transferValue2Child2() {
+    this.communicationService.eventBusService.next(this.name);
   }
 
 }

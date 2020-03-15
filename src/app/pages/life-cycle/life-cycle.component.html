@@ -1,0 +1,59 @@
+<div class="panel panel-primary">
+  <div class="panel-heading"><h4>生命周期钩子函数</h4></div>
+
+  <div class="panel-body">
+    <h4>这个组件没有进行变更检查策略，在每一次变更了数据，都会触发<code>ngDoCheck()</code></h4>
+    <h4>只有变更了不可边数据类型，才会触发<code>ngOnChanges()</code></h4>
+    <h4>每一个组件上都有一个变更检测器，无论组件树上的哪个组件发生改变，angular都会将整个组件树遍历一遍，所以钩子函数会被重新调用一遍，这是angular的默认行为</h4>
+    <h4>但是，这样会影响效率，所以有了<b>脏检测<code>OnPush</code></b>策略</h4>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4>变更检测 脏检查策略 <code>OnPush</code></h4>
+  </div>
+
+  <div class="panel-body">
+    <h4>脏检查的两种策略</h4>
+    <h4><code>Default</code>,无论哪个组件发生变化，都会从根组件开始全局遍历调用<code>ngDoCheck()</code></h4>
+    <h4><code>OnPush</code>,只有当组件的<code>@Input</code>属性发生变化的时候才调用本组件的<code>ngDoCheck()</code></h4>
+    <pre>
+      @Component(}
+        selector: 'app-life-changes-detection',
+        templateUrl: './life-changes-detection.component.html',
+        styleUrls: ['./life-changes-detection.component.css'],
+        changeDetection: ChangeDetectionStrategy.OnPush
+      })
+    </pre>
+
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4>
+      <code>ngAfterViewInit()</code>和
+      <code>ngAfterViewChecked()</code>
+    </h4>
+  </div>
+  <div class="panel-body">
+    <h4>
+      1. 不可以在
+      <code>ngAfterViewInit()</code>和
+      <code>ngAfterViewChecked()</code>函数里修改被绑定的属性，否则会报错
+    </h4>
+    <h4>2. 在组件视图装配的时候调用这两个钩子函数</h4>
+    <h4>3. 视图装配这两个钩子的顺序是从子组件到父组件依次进行</h4>
+    <h4>4. 这个钩子函数也会被调用很多次，如果没有使用
+      <code>OnPush</code>策略，所有实现了这个钩子的组件都会被调用</h4>
+    <h4>5. 子组件先被
+      <code>ngAfterViewInit()</code>和
+      <code>ngAfterViewChecked()</code>函数调用，然后再是被父组件的子组件先被
+      <code>ngAfterViewInit()</code>和
+      <code>ngAfterViewChecked()</code>调用
+    </h4>
+  </div>
+</div>
+
+

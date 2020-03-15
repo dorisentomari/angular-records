@@ -1,1 +1,35 @@
-<p>communication works!</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">组件之间的通信</div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">父子组件通信——父组件通过组件传值方式给子组件传递数据</div>
+
+  <div class="panel-body">
+    <app-child1 [name]="name"></app-child1>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">父子组件通信——父组件通过 Service 给子组件传递数据</div>
+
+  <div class="panel-body">
+    <p>
+      <button class="btn btn-primary" (click)="transferValue2Child2()">给子组件传递数据</button>
+    </p>
+    <h4>Service 传值方式适用于任意组件之间传值</h4>
+
+    <app-child2></app-child2>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">父子组件通信——父组件通过模板变量获取子组件数据，可以调用子组件的方法</div>
+
+  <div class="panel-body">
+    <app-child3 #child3></app-child3>
+    <h4>Child3 的 name = {{ child3.name }}</h4>
+    <h4>Child3 的 age = 不能获取，只能获取 public 值</h4>
+    <p><button class="btn btn-primary" (click)="child3.getChildInfo()">调用子组件的方法，在控制台输出 child3 的 name 和 age</button></p>
+  </div>
+</div>
