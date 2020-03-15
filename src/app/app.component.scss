@@ -10,5 +10,9 @@
 
   a {
     padding: 5px;
+
+    &.active {
+      background: #337ab7;
+    }
   }
 }

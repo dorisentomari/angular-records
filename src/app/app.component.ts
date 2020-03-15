@@ -1,5 +1,12 @@
 import {Component} from '@angular/core';
 
+interface RouteInterface {
+  name: string;
+  routerLink: string;
+  class: string;
+  routerLinkActive: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,6 +15,33 @@ import {Component} from '@angular/core';
 export class AppComponent {
   title = 'angular-records';
 
-  color: string;
+  public routes: Array<RouteInterface>;
+
+  public routerLinkActiveOptions: object;
+
+  constructor() {
+    this.routerLinkActiveOptions = {
+      exact: true
+    };
+
+    const common = {
+      class: 'list-group-item',
+      routerLinkActive: 'active'
+    };
+
+    this.routes = [
+      {name: '首页', routerLink: '/', ...common},
+      {name: '组件通信', routerLink: '/communication', ...common},
+      {name: '指令', routerLink: '/directive', ...common},
+      {name: '表单', routerLink: '/form', ...common},
+      {name: '生命周期', routerLink: '/life-cycle', ...common},
+      {name: 'shadowDom', routerLink: '/shadow-dom', ...common},
+      {name: 'HTTP', routerLink: '/http', ...common},
+      {name: 'ngContent', routerLink: '/ng-content', ...common},
+      {name: 'rxjs', routerLink: '/rxjs', ...common},
+      {name: 'i18n', routerLink: '/i18n', ...common},
+      {name: 'router', routerLink: '/router', ...common},
+    ];
+  }
 
 }

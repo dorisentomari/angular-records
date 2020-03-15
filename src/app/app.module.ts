@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
 import { HttpComponent } from './pages/http/http.component';
 import { RouterComponent } from './pages/router/router.component';
 import { CommunicationComponent } from './pages/communication/communication.component';
 import { HomeComponent } from './pages/home/home.component';
-
-import { AppRoutingModule } from './app-routing.module';
 import { Child1Component } from './pages/communication/child1/child1.component';
 import { Child2Component } from './pages/communication/child2/child2.component';
 import { Child3Component } from './pages/communication/child3/child3.component';
@@ -24,6 +26,7 @@ import { NoneModeComponent } from './pages/shadow-dom/none-mode/none-mode.compon
 import { NgContent1Component } from './pages/ng-content/ng-content1/ng-content1.component';
 import { NgContent2Component } from './pages/ng-content/ng-content2/ng-content2.component';
 import { NgContent3Component } from './pages/ng-content/ng-content3/ng-content3.component';
+
 import { FontColorDirective } from './directives/font-color.directive';
 
 @NgModule({
@@ -53,7 +56,9 @@ import { FontColorDirective } from './directives/font-color.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

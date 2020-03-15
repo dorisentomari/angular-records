@@ -22,48 +22,60 @@ const routes: Routes = [
   },
   {
     path: 'communication',
-    component: CommunicationComponent
+    component: CommunicationComponent,
+    pathMatch: 'full'
   },
   {
     path: 'directive',
-    component: DirectiveComponent
+    component: DirectiveComponent,
+    pathMatch: 'full'
   },
   {
     path: 'form',
-    component: FormComponent
+    component: FormComponent,
+    pathMatch: 'full'
   },
   {
     path: 'life-cycle',
-    component: LifeCycleComponent
+    component: LifeCycleComponent,
+    pathMatch: 'full'
   },
   {
     path: 'shadow-dom',
-    component: ShadowDomComponent
+    component: ShadowDomComponent,
+    pathMatch: 'full'
   },
   {
     path: 'http',
-    component: HttpComponent
+    component: HttpComponent,
+    pathMatch: 'full'
   },
   {
     path: 'ng-content',
-    component: NgContentComponent
+    component: NgContentComponent,
+    pathMatch: 'full'
   },
   {
     path: 'router',
-    component: RouterComponent
+    component: RouterComponent,
+    pathMatch: 'full'
   },
   {
     path: 'rxjs',
-    component: RxjsComponent
+    component: RxjsComponent,
+    pathMatch: 'full'
   },
   {
     path: 'i18n',
-    component: I18nComponent
+    component: I18nComponent,
+    pathMatch: 'full'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    enableTracing: true
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
