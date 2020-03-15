@@ -6,6 +6,7 @@ import {CommunicationComponent} from './pages/communication/communication.compon
 import {DirectiveComponent} from './pages/directive/directive.component';
 import {FormComponent} from './pages/form/form.component';
 import {LifeCycleComponent} from './pages/life-cycle/life-cycle.component';
+import { ShadowDomComponent } from './pages/shadow-dom/shadow-dom.component';
 import {HttpComponent} from './pages/http/http.component';
 import {NgContentComponent} from './pages/ng-content/ng-content.component';
 import {RouterComponent} from './pages/router/router.component';
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'life-cycle',
     component: LifeCycleComponent
+  },
+  {
+    path: 'shadow-dom',
+    component: ShadowDomComponent
   },
   {
     path: 'http',

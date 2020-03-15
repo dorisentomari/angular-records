@@ -26,7 +26,14 @@
           <span>{{ item.name }}</span>
           <button class="btn btn-primary" (click)="getNgForItem(item)">获取 item 的值</button>
         </div>
+      </li>
 
+      <li class="list-group-item">
+        <label for="green"><input type="radio" name="colors" id="green" (click)="color='green'">green</label>
+        <label for="yellow"><input type="radio" name="colors" id="yellow" (click)="color='yellow'">yellow</label>
+        <label for="red"><input type="radio" name="colors" id="red" (click)="color='red'">red</label>
+        <h4 [appFontColor]="color" >自定义指令字体颜色 fontColor</h4>
+        <h4 [appFontColor]="color" defaultColor="violet">自定义指令字体颜色 fontColor</h4>
       </li>
 
     </ul>

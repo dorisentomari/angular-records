@@ -17,6 +17,14 @@ import { FormComponent } from './pages/form/form.component';
 import { LifeCycleComponent } from './pages/life-cycle/life-cycle.component';
 import { RxjsComponent } from './pages/rxjs/rxjs.component';
 import { I18nComponent } from './pages/i18n/i18n.component';
+import { ShadowDomComponent } from './pages/shadow-dom/shadow-dom.component';
+import { EmulateModeComponent } from './pages/shadow-dom/emulate-mode/emulate-mode.component';
+import { ShadowDomModeComponent } from './pages/shadow-dom/shadow-dom-mode/shadow-dom-mode.component';
+import { NoneModeComponent } from './pages/shadow-dom/none-mode/none-mode.component';
+import { NgContent1Component } from './pages/ng-content/ng-content1/ng-content1.component';
+import { NgContent2Component } from './pages/ng-content/ng-content2/ng-content2.component';
+import { NgContent3Component } from './pages/ng-content/ng-content3/ng-content3.component';
+import { FontColorDirective } from './directives/font-color.directive';
 
 @NgModule({
   declarations: [
@@ -33,7 +41,15 @@ import { I18nComponent } from './pages/i18n/i18n.component';
     FormComponent,
     LifeCycleComponent,
     RxjsComponent,
-    I18nComponent
+    I18nComponent,
+    ShadowDomComponent,
+    EmulateModeComponent,
+    ShadowDomModeComponent,
+    NoneModeComponent,
+    NgContent1Component,
+    NgContent2Component,
+    NgContent3Component,
+    FontColorDirective
   ],
   imports: [
     BrowserModule,

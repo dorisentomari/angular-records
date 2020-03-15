@@ -1,1 +1,20 @@
-<p>ng-content works!</p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4>ngContent 内容投影</h4>
+  </div>
+
+  <div class="panel-body">
+    <h4>内容投影的元素与实际元素的顺序没关系，与原投影容器定义的顺序有关系</h4>
+    <app-ng-content1>
+      <h3>这是 ng-content1 投影里的 h3 标签</h3>
+      <app-ng-content2>
+        <app-ng-content3></app-ng-content3>
+      </app-ng-content2>
+      <h6>这是 ng-content1 投影里的 h6 标签</h6>
+    </app-ng-content1>
+  </div>
+
+  <div class="panel-footer">
+
+  </div>
+</div>

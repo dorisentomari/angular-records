@@ -15,6 +15,8 @@ export class DirectiveComponent implements OnInit {
 
   public userList: Array<any>;
 
+  public color: string;
+
   constructor() {
     this.ngClass = 'orange';
     this.ngStyle = {
