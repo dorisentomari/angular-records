@@ -1,0 +1,50 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4>模板驱动表单</h4>
+  </div>
+
+  <div class="panel-body" >
+    <form action="">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <label for="teamName">
+            team name:
+            <input type="text" id="teamName" name="teamName" [(ngModel)]="team.name" #name="ngModel" required="required">
+          </label>
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            team name is required
+          </div>
+        </li>
+
+        <li class="list-group-item">
+          <label for="teamSlogan">
+            team slogan:
+            <select id="teamSlogan" name="teamSlogan" [(ngModel)]="team.slogan">
+              <option *ngFor="let slogan of slogans; let key = index;" [value]="slogan">{{ slogan }}</option>
+            </select>
+          </label>
+        </li>
+
+        <li class="list-group-item">
+          <ul class="list-group">
+            <li class="list-group-item">team name: {{ team.name }}</li>
+            <li class="list-group-item">team slogan: {{ team.slogan }}</li>
+          </ul>
+        </li>
+
+        <li class="list-group-item">
+          <button class="btn btn-primary" (click)="getTeamData()">获取 team 数据</button>
+        </li>
+
+        <li class="list-group-item">
+          <button class="btn btn-primary" (click)="setTeamData()">设置 team 数据</button>
+        </li>
+
+      </ul>
+    </form>
+  </div>
+
+  <div class="panel-footer">
+
+  </div>
+</div>

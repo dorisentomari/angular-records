@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -32,6 +32,8 @@ import { ModuleComponent } from './pages/module/module.component';
 import { SsrComponent } from './pages/ssr/ssr.component';
 
 import { FontColorDirective } from './directives/font-color.directive';
+import { ReactiveFormComponent } from './pages/form/reactive-form/reactive-form.component';
+import { TemplateDrivenFormComponent } from './pages/form/template-driven-form/template-driven-form.component';
 
 
 @NgModule({
@@ -60,13 +62,16 @@ import { FontColorDirective } from './directives/font-color.directive';
     FontColorDirective,
     AnimationComponent,
     ModuleComponent,
-    SsrComponent
+    SsrComponent,
+    ReactiveFormComponent,
+    TemplateDrivenFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule
   ],
   providers: [],

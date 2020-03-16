@@ -1,0 +1,133 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4>响应式表单</h4>
+  </div>
+
+  <div class="panel-body">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <label for="username">
+          username: <input type="text" [formControl]="usernameFormControl" id="username">
+        </label>
+      </li>
+      <li class="list-group-item">
+        <button class="btn btn-primary" (click)="getUserNameValue()">获取 username 的值</button>
+      </li>
+      <li class="list-group-item">
+        <button class="btn btn-primary" (click)="setUserNameValue()">设置 username 的值</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4>响应式表单分组</h4>
+  </div>
+
+  <div class="panel-body">
+    <form [formGroup]="teamFromGroup" (ngSubmit)="teamFormSubmit()">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <label>Team name:
+            <input type="text" formControlName="name">
+          </label>
+        </li>
+        <li class="list-group-item">
+          <label>Team slogan:
+            <input type="text" formControlName="slogan">
+          </label>
+        </li>
+        <li class="list-group-item">
+          <div formGroupName="address">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <label>province:
+                  <input type="text" formControlName="province">
+                </label>
+              </li>
+
+              <li class="list-group-item">
+                <label>city:
+                  <input type="text" formControlName="city">
+                </label>
+              </li>
+
+              <li class="list-group-item">
+                <label>area:
+                  <input type="text" formControlName="area">
+                </label>
+              </li>
+
+            </ul>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <button class="btn btn-primary" (click)="getFormGroupValue()">获取 FormGroup 的值</button>
+        </li>
+        <li class="list-group-item">
+          <button class="btn btn-primary" (click)="setFormGroupValue()">设置 set FormGroup 的值</button>
+          （setValue 的时候必须把 form 里所有的字段都写进去，不然会报错）
+        </li>
+        <li class="list-group-item">
+          <button class="btn btn-primary" (click)="patchFormGroupValue()">设置 patch FormGroup 的值</button>
+          （可以只传入需要修改的字段信息，不修改的不用写入）
+        </li>
+        <li class="list-group-item">
+          <button class="btn btn-primary" type="submit" [disabled]="!teamFromGroup.valid" >提交 FormGroup 的值</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4>响应式表单 使用 FormBuilder 来生成表单控件</h4>
+  </div>
+
+  <div class="panel-body">
+    <form [formGroup]="schoolFormGroup" (ngSubmit)="schoolFormSubmit()">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <label>Team name:
+            <input id="name" type="text" formControlName="name" required="required">
+          </label>
+          <div class="bg-danger text-danger" *ngIf="schoolFormName.invalid && (schoolFormName.dirty || schoolFormName.touched)">
+            <div *ngIf="schoolFormName.errors.maxlength">Name max length is 10</div>
+            <div *ngIf="schoolFormName.errors.minlength">Name min length is 4</div>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div formGroupName="address">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <label>province:
+                  <input type="text" formControlName="province">
+                </label>
+              </li>
+
+              <li class="list-group-item">
+                <label>city:
+                  <input type="text" formControlName="city">
+                </label>
+              </li>
+
+              <li class="list-group-item">
+                <label>area:
+                  <input type="text" formControlName="area">
+                </label>
+              </li>
+
+            </ul>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <button class="btn btn-primary" type="submit">获取 FormGroup 的值</button>
+        </li>
+
+      </ul>
+    </form>
+
+  </div>
+</div>
