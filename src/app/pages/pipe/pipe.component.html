@@ -1,0 +1,76 @@
+<div class="panel panel-primary">
+
+  <div class="panel-heading">
+    <h4>内置管道操作符</h4>
+  </div>
+
+  <div class="panel-body">
+
+    <h3>DatePipe 管道操作符</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4><code>today</code> 是 <code>{{ today | date: 'yyyy-MM-dd' }}</code></h4>
+      </li>
+      <li class="list-group-item">
+        <h4><code>now</code> 是 <code>{{ today | date: 'yyyy-MM-dd HH:mm:ss' }}</code></h4>
+      </li>
+    </ul>
+
+    <h3>UpperCasePipe 和 LowerCasePipe 管道操作符</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4><code>{{ username }}</code> 转为大写 <code>{{ username | uppercase }}</code></h4>
+      </li>
+      <li class="list-group-item">
+        <h4><code>{{ username }}</code> 转为小写 <code>{{ username | lowercase }}</code></h4>
+      </li>
+    </ul>
+
+    <h3>CurrencyPipe 和 PercentPipe 管道操作符</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4><code>{{ price }}</code> 转为货币形式，默认为美元形式 <code>{{ price | currency }}</code></h4>
+        <h4><code>{{ price }}</code> 转为货币形式，人民币形式 <code>{{ price | currency: '￥' }}</code></h4>
+      </li>
+      <li class="list-group-item">
+        <h4><code>{{ discount }}</code> 转为百分比 <code>{{ discount | percent }}</code></h4>
+      </li>
+    </ul>
+
+    <h3>JsonPipe 管道操作符</h3>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4>
+          <code>team</code> 是一个对象，有 <code>name</code> 和 <code>slogan</code> 属性，实际上这个管道操作符就是 <code>JSON.stringify</code> 操作
+          <code>{{ team | json }}</code>
+        </h4>
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4>自定义管道操作符</h4>
+  </div>
+
+  <div class="panel-body">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4>
+          <code>{{ slogan }}</code>
+          使用 <code>emoji</code> 操作符之后
+          <code>{{ slogan | emoji: '😀' : '😁' }}</code>
+        </h4>
+      </li>
+    </ul>
+  </div>
+
+  <div class="panel-footer">
+
+  </div>
+</div>
+

@@ -14,7 +14,8 @@ import {RouterComponent} from './pages/router/router.component';
 import {ModuleComponent} from './pages/module/module.component';
 import {RxjsComponent} from './pages/rxjs/rxjs.component';
 import {I18nComponent} from './pages/i18n/i18n.component';
-import { SsrComponent } from './pages/ssr/ssr.component';
+import {SsrComponent} from './pages/ssr/ssr.component';
+import {PipeComponent} from './pages/pipe/pipe.component';
 
 const routes: Routes = [
   {
@@ -85,6 +86,11 @@ const routes: Routes = [
   {
     path: 'ssr',
     component: SsrComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'pipe',
+    component: PipeComponent,
     pathMatch: 'full'
   }
 ];

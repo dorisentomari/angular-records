@@ -34,6 +34,8 @@ import { SsrComponent } from './pages/ssr/ssr.component';
 import { FontColorDirective } from './directives/font-color.directive';
 import { ReactiveFormComponent } from './pages/form/reactive-form/reactive-form.component';
 import { TemplateDrivenFormComponent } from './pages/form/template-driven-form/template-driven-form.component';
+import { PipeComponent } from './pages/pipe/pipe.component';
+import { EmojiPipe } from './pipes/emoji.pipe';
 
 
 @NgModule({
@@ -64,7 +66,9 @@ import { TemplateDrivenFormComponent } from './pages/form/template-driven-form/t
     ModuleComponent,
     SsrComponent,
     ReactiveFormComponent,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    PipeComponent,
+    EmojiPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

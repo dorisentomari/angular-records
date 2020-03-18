@@ -44,6 +44,7 @@ export class AppComponent {
       {name: 'i18n', routerLink: '/i18n', ...common},
       {name: 'router', routerLink: '/router', ...common},
       {name: 'ssr', routerLink: '/ssr', ...common},
+      {name: 'pipe', routerLink: '/pipe', ...common},
     ];
   }
 
