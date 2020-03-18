@@ -36,7 +36,7 @@ import { ReactiveFormComponent } from './pages/form/reactive-form/reactive-form.
 import { TemplateDrivenFormComponent } from './pages/form/template-driven-form/template-driven-form.component';
 import { PipeComponent } from './pages/pipe/pipe.component';
 import { EmojiPipe } from './pipes/emoji.pipe';
-
+import { TsPointsComponent } from './pages/ts-points/ts-points.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +68,8 @@ import { EmojiPipe } from './pipes/emoji.pipe';
     ReactiveFormComponent,
     TemplateDrivenFormComponent,
     PipeComponent,
-    EmojiPipe
+    EmojiPipe,
+    TsPointsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

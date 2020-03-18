@@ -45,6 +45,7 @@ export class AppComponent {
       {name: 'router', routerLink: '/router', ...common},
       {name: 'ssr', routerLink: '/ssr', ...common},
       {name: 'pipe', routerLink: '/pipe', ...common},
+      {name: 'ts-知识点（与Angular无关）', routerLink: '/ts-point', ...common},
     ];
   }
 

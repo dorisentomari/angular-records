@@ -1,0 +1,29 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4>ts 的装饰器（注解）</h4>
+  </div>
+
+  <div class="panel-body">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4>装饰器装饰字符串</h4>
+      </li>
+      <li class="list-group-item">
+        username 原值是 <code>jack</code>
+      </li>
+      <li class="list-group-item">
+        username 经过 @EmojiDecorator 装饰之后的值为 <code>{{ username }}</code>
+      </li>
+    </ul>
+
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4>装饰器装饰函数</h4>
+      </li>
+      <li class="list-group-item">
+        <h4>userLogin button 经过 @ConfirmDecorator 装饰</h4>
+        <button class="btn btn-primary" (click)="userLogin()">userLogin</button>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -16,6 +16,7 @@ import {RxjsComponent} from './pages/rxjs/rxjs.component';
 import {I18nComponent} from './pages/i18n/i18n.component';
 import {SsrComponent} from './pages/ssr/ssr.component';
 import {PipeComponent} from './pages/pipe/pipe.component';
+import {TsPointsComponent} from './pages/ts-points/ts-points.component';
 
 const routes: Routes = [
   {
@@ -92,6 +93,15 @@ const routes: Routes = [
     path: 'pipe',
     component: PipeComponent,
     pathMatch: 'full'
+  },
+  {
+    path: 'ts-point',
+    component: TsPointsComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: ''
   }
 ];
 
