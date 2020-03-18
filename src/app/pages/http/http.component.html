@@ -7,6 +7,7 @@
     <h4>name = {{ user.name }}</h4>
     <h4>age = {{ user.age }}</h4>
     <button class="btn btn-primary" (click)="getUserInfo()">get</button>
+    <h4><label for="newName">newName: <input type="text" [(ngModel)]="newName" id="newName"></label></h4>
     <button class="btn btn-primary" (click)="updateUserInfo()">update</button>
 
     <h4>一般来说，要把 HTTP 作为一个服务放在 Service 层中，同时在 Service 层中对数据处理，错误异常处理等。所以就是说，组件是视图层，专门用来做数据展示，服务是逻辑层，用来做数据处理。</h4>

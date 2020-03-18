@@ -17,6 +17,7 @@ import {I18nComponent} from './pages/i18n/i18n.component';
 import {SsrComponent} from './pages/ssr/ssr.component';
 import {PipeComponent} from './pages/pipe/pipe.component';
 import {TsPointsComponent} from './pages/ts-points/ts-points.component';
+import {DirtyCheckComponent} from './pages/dirty-check/dirty-check.component';
 
 const routes: Routes = [
   {
@@ -97,6 +98,11 @@ const routes: Routes = [
   {
     path: 'ts-point',
     component: TsPointsComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'dirty-check',
+    component: DirtyCheckComponent,
     pathMatch: 'full'
   },
   {

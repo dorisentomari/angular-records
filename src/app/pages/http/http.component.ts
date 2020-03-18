@@ -1,10 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-
-interface UserInterface {
-  name: string;
-  age: number;
-}
+import {UserService} from '../../services/user.service';
+import {UserInterface} from '../../types';
 
 @Component({
   selector: 'app-http',
@@ -14,32 +10,34 @@ interface UserInterface {
 export class HttpComponent implements OnInit {
 
   public user: UserInterface;
-  public url: string;
-  public httpOptions: object;
+
+  public newName: string;
 
   constructor(
-    public http: HttpClient
+    private userService: UserService
   ) {
-    this.http = http;
+
     this.user = {
       name: null,
       age: null
     };
-    this.url = 'http://localhost:3000/api/user';
-    this.httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+    this.userService = userService;
   }
 
   ngOnInit(): void {
   }
 
   getUserInfo() {
-    return this.http.get<UserInterface>(this.url).subscribe(res => {
+    this.userService.getUserInfo().subscribe(res => {
       this.user = res;
     });
   }
 
   updateUserInfo() {
-    this.http.post<UserInterface>(this.url, {name: 'tom'}, this.httpOptions).subscribe(res => {
+    const updateInfo: object = {
+      name: this.newName
+    };
+    this.userService.updateUserInfo(updateInfo).subscribe(res => {
       this.user = res;
     });
   }

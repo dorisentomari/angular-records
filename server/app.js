@@ -40,7 +40,6 @@ app.post('/api/user', (req, res) => {
   res.json(user);
 });
 
-
 app.listen(PORT, err => {
   if (err) {
     console.log(err);

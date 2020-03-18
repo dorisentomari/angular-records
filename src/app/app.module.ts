@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpParamsInterceptor } from './pages/http/http-params.interceptor';
+import { HttpResponseInterceptor } from './pages/http/http-response.interceptor';
 
 import { HttpComponent } from './pages/http/http.component';
 import { RouterComponent } from './pages/router/router.component';
@@ -37,6 +39,9 @@ import { TemplateDrivenFormComponent } from './pages/form/template-driven-form/t
 import { PipeComponent } from './pages/pipe/pipe.component';
 import { EmojiPipe } from './pipes/emoji.pipe';
 import { TsPointsComponent } from './pages/ts-points/ts-points.component';
+import { DirtyCheckComponent } from './pages/dirty-check/dirty-check.component';
+
+
 
 @NgModule({
   declarations: [
@@ -69,7 +74,8 @@ import { TsPointsComponent } from './pages/ts-points/ts-points.component';
     TemplateDrivenFormComponent,
     PipeComponent,
     EmojiPipe,
-    TsPointsComponent
+    TsPointsComponent,
+    DirtyCheckComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -79,7 +85,18 @@ import { TsPointsComponent } from './pages/ts-points/ts-points.component';
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpParamsInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpResponseInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

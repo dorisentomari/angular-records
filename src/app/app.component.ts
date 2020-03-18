@@ -34,6 +34,7 @@ export class AppComponent {
       {name: '组件通信', routerLink: '/communication', ...common},
       {name: '动画', routerLink: '/animation', ...common},
       {name: '指令', routerLink: '/directive', ...common},
+      {name: 'pipe 管道', routerLink: '/pipe', ...common},
       {name: '表单', routerLink: '/form', ...common},
       {name: '生命周期', routerLink: '/life-cycle', ...common},
       {name: 'shadowDom', routerLink: '/shadow-dom', ...common},
@@ -44,7 +45,7 @@ export class AppComponent {
       {name: 'i18n', routerLink: '/i18n', ...common},
       {name: 'router', routerLink: '/router', ...common},
       {name: 'ssr', routerLink: '/ssr', ...common},
-      {name: 'pipe', routerLink: '/pipe', ...common},
+      {name: '脏值检查', routerLink: '/dirty-check', ...common},
       {name: 'ts-知识点（与Angular无关）', routerLink: '/ts-point', ...common},
     ];
   }
