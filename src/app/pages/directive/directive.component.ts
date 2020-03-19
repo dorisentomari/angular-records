@@ -13,6 +13,10 @@ export class DirectiveComponent implements OnInit {
 
   public ngIf: boolean;
 
+  public ngSwitch: string;
+
+  public ngNonBindable: string;
+
   public userList: Array<any>;
 
   public color: string;
@@ -24,6 +28,8 @@ export class DirectiveComponent implements OnInit {
     };
     this.ngIf = true;
 
+    this.ngSwitch = 'B';
+
     this.userList = [
       {
         id: 1,
@@ -34,6 +40,9 @@ export class DirectiveComponent implements OnInit {
         name: 'tom'
       }
     ];
+
+    this.ngNonBindable = 'hello, 这个是 ngNonBindable 变量';
+
   }
 
   ngOnInit(): void {

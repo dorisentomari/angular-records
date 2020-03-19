@@ -33,3 +33,19 @@
     <p><button class="btn btn-primary" (click)="child3.getChildInfo()">调用子组件的方法，在控制台输出 child3 的 name 和 age</button></p>
   </div>
 </div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">父子组件通信——子组件发射事件，父组件接收并调用事件</div>
+
+  <div class="panel-body">
+    <app-child4 (getUserNameOutput)="getUserName($event)"></app-child4>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h4>这里是父组件获取到的值 <code>{{userNameFromChild4}}</code></h4>
+      </li>
+      <li class="list-group">
+        <h4>感觉 EventEmitter 这种方法挺麻烦的，不太喜欢这种调用方式，不如直接使用模板变量方便。</h4>
+      </li>
+    </ul>
+  </div>
+</div>

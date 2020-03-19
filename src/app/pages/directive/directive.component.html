@@ -21,11 +21,25 @@
       </li>
 
       <li class="list-group-item">
+        <h4>NgSwitch 的用法</h4>
+        <h4 [ngSwitch]="ngSwitch">
+          <span *ngSwitchCase="'A'">NgSwitch is <code>A</code></span>
+          <span *ngSwitchCase="'B'">NgSwitch is <code>B</code></span>
+          <span *ngSwitchCase="'C'">NgSwitch is <code>C</code></span>
+        </h4>
+      </li>
+
+      <li class="list-group-item">
         <h4>NgFor 的用法</h4>
         <div *ngFor="let item of userList; let key = index;">
           <span>{{ item.name }}</span>
           <button class="btn btn-primary" (click)="getNgForItem(item)">获取 item 的值</button>
         </div>
+      </li>
+
+      <li class="list-group-item">
+        <h4>ngNonBindable 的用法</h4>
+        <h4><code>{{ ngNonBindable }}</code> 使用了 <code>ngNonBindable</code> 指令之后的值 <code ngNonBindable>{{ ngNonBindable }}</code></h4>
       </li>
 
       <li class="list-group-item">

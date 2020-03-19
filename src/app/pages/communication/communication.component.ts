@@ -10,6 +10,8 @@ export class CommunicationComponent implements OnInit {
 
   public name: string;
 
+  public userNameFromChild4: string;
+
   constructor(
     public communicationService: CommunicationService
   ) {
@@ -21,6 +23,10 @@ export class CommunicationComponent implements OnInit {
 
   public transferValue2Child2() {
     this.communicationService.eventBusService.next(this.name);
+  }
+
+  getUserName(username) {
+    this.userNameFromChild4 = username;
   }
 
 }

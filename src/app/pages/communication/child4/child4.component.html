@@ -1,0 +1,18 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h4>子组件通过 EventEmitter 发射事件给父组件传递值</h4>
+  </div>
+
+  <div class="panel-body">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <label for="username">
+          username:
+          <input type="text" id="username" [(ngModel)]="username">
+        </label>
+        <button class="btn btn-primary" (click)="getUserName()">获取 username 的值，并传递给父组件</button>
+      </li>
+    </ul>
+  </div>
+
+</div>

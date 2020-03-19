@@ -1,13 +1,25 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h4>module</h4>
+    <h4>module 及其相关概念</h4>
   </div>
 
   <div class="panel-body">
+    <h4>Angular 中的模块都是 NgModule，也就是说我们会在一个项目里创建很多个 NgModule。 </h4>
+    <h4>而 NgModule 是一个带有 <code>@NgModule</code> 装饰器的类，而 @NgModule 的参数是一个元数据对象，用于描述如何编译组件的模板，以及如何在运行时创建注入器。通过 exports
+      导出一些模块。@NgModule 还可以把一些服务提供商加到应用的依赖注入器中。</h4>
+    <pre ngNonBindable>
+      具体查看 https://angular.cn/guide/ngmodule-api
+      declarations: [这个模块里所拥有的组件、指令、管道],
+      imports: [引入给自己使用的组件、指令、管道],
+      exports: [导出给外部使用的组件、指令、管道],
+      providers: [各种服务提供商],
+      bootstrap: [根组件],
+      entryComponents: [动态加载进视图的组件列表]
+    </pre>
+    <h4>所以 module 模块就是把一系列组件、指令、管道、路由组织到一块，做成一个模块，这个模块做自己特定的事情，与外部弱耦合，甚至无耦合。比如说一个支付功能模块，一个通用性的功能模块，像 Angular 里的 BrowserModule，FormsModule，HttpClientModule</h4>
+    <h4>但是要注意，一个组件只能归属于一个模块，也就是说只能 declare 在一个 NgModule 中，不能一个组件既归属于 A 模块，又归属于 B 模块。指令和管道也是同样的要求。但是如果要全局使用，可以创建共享模块。</h4>
+    <h4>一个应用至少有一个模块，这个模块就是跟模块。</h4>
 
   </div>
 
-  <div class="panel-footer">
-
-  </div>
 </div>

@@ -40,6 +40,7 @@ import { PipeComponent } from './pages/pipe/pipe.component';
 import { EmojiPipe } from './pipes/emoji.pipe';
 import { TsPointsComponent } from './pages/ts-points/ts-points.component';
 import { DirtyCheckComponent } from './pages/dirty-check/dirty-check.component';
+import { Child4Component } from './pages/communication/child4/child4.component';
 
 
 
@@ -75,7 +76,8 @@ import { DirtyCheckComponent } from './pages/dirty-check/dirty-check.component';
     PipeComponent,
     EmojiPipe,
     TsPointsComponent,
-    DirtyCheckComponent
+    DirtyCheckComponent,
+    Child4Component
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
