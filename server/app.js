@@ -1,11 +1,12 @@
+const path = require('path');
+
 const express = require('express');
 const bodyParser =require('body-parser');
 
+const history = require('connect-history-api-fallback');
+
 const app = express();
 const PORT = 3000;
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
 
 app.all('*', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -16,6 +17,20 @@ app.all('*', function (req, res, next) {
   } else {
     next();
   }
+});
+
+app.use(history({
+  rewrites: [
+    { from: /^\/abc$/, to: '/' }
+  ]
+}));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(express.static(path.join(__dirname, '../dist/angular-records/browser')));
+app.get('/', function (req, res) {
+  res.sendFile('../dist/angular-records/browser/index.html');
 });
 
 const user = {
