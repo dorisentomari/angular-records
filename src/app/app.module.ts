@@ -41,6 +41,9 @@ import { EmojiPipe } from './pipes/emoji.pipe';
 import { TsPointsComponent } from './pages/ts-points/ts-points.component';
 import { DirtyCheckComponent } from './pages/dirty-check/dirty-check.component';
 import { Child4Component } from './pages/communication/child4/child4.component';
+import { LifeCycleChild1Component } from './pages/life-cycle/life-cycle-child1/life-cycle-child1.component';
+import { LifeCycleChild2Component } from './pages/life-cycle/life-cycle-child2/life-cycle-child2.component';
+import { LifeCycleChild3Component } from './pages/life-cycle/life-cycle-child3/life-cycle-child3.component';
 
 
 
@@ -77,7 +80,10 @@ import { Child4Component } from './pages/communication/child4/child4.component';
     EmojiPipe,
     TsPointsComponent,
     DirtyCheckComponent,
-    Child4Component
+    Child4Component,
+    LifeCycleChild1Component,
+    LifeCycleChild2Component,
+    LifeCycleChild3Component
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
